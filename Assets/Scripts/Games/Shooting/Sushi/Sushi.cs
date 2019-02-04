@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Games.Shooting.Sushi;
-using UnityEditor;
 using UnityEngine;
 namespace Games.Shooting.Sushi{
     public class Sushi : MonoBehaviour{
