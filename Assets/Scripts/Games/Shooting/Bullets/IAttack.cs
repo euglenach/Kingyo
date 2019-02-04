@@ -3,5 +3,6 @@
 namespace Games.Shooting.Bullets{
     public interface IAttack{
         bool IsEnd { get; }
+        void StartAttack();
     }
 }
