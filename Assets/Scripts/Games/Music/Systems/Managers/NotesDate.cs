@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Games.Music.Systems.Managers{
 	public class NotesDate : MonoBehaviour{
-		private const string fileName = "Music.csv";
+		private const string fileName = "Music";
 		private TextAsset csvFile;
 		private List<string[]> csvDatas = new List<string[]>();
 

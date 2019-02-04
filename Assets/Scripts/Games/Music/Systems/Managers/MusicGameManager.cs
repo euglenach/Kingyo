@@ -7,7 +7,7 @@ namespace Games.Music.Systems.Managers{
 		public bool IsEnd { get; private set; }
 
 		public void Transition(){
-            			
+			IsEnd = true;
 		}
 	}
 }
