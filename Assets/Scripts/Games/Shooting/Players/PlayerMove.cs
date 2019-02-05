@@ -23,6 +23,10 @@ namespace Games.Shooting.Players{
         }
 
         private void Move(){
+            if (!PlayerManager.IsMove){
+                return;
+            }
+            
             if (Input.GetKey(KeyCode.W))
             {
                 rb.velocity=new Vector3(0, moveY, 0);

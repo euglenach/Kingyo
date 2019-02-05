@@ -6,7 +6,6 @@ namespace Games.Shooting.Players{
     public class PlayerAttack : MonoBehaviour{
 
         public GameObject kobanPrefab;
-        bool attackFlag = true;
 
         private void Attack(){
 
@@ -18,9 +17,10 @@ namespace Games.Shooting.Players{
 
         void Update()
         {
-            if (attackFlag){
-                Attack();
+            if (!PlayerManager.IsAttack){
+                return;
             }
+            Attack();
         }
     }
 }
