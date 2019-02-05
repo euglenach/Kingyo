@@ -14,6 +14,7 @@ namespace Systems.Managers{
 
 		public void StartMusic(){
 			audioSource.Stop();
+			Debug.Log(SceneManager.NowScene);
 			switch (SceneManager.NowScene){
 				case Scene.Title:
 					PlayMusic(0);

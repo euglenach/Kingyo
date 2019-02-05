@@ -52,7 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62d0df151636844fade28466dde7654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: fc5fb93690e3e9f45849ba80009fa783, type: 3}
 --- !u!114 &114625585832513452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,4 +66,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19bc97fcccf7c94aa193ccd61e2737a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NowGame: 0
   CoinCount: 0

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Systems.Managers;
 using UnityEngine;
+using UniRx;
 
 namespace Games.Music.Systems.Managers {
 
@@ -25,6 +27,10 @@ namespace Games.Music.Systems.Managers {
             top = camera.ViewportToWorldPoint(Vector3.one).y;
             down = camera.ViewportToWorldPoint(Vector3.zero).y;
             distance = top - lineYPos;
+            this
+                .ObserveEveryValueChanged(n => n.delta)
+                .First(n => n > 0)
+                .Subscribe(_ => BGMManager.Instance.StartMusic());
         }
 
         private void FixedUpdate() {
