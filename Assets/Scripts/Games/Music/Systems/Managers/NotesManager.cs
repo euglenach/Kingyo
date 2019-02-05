@@ -11,8 +11,6 @@ namespace Games.Music.Systems.Managers {
         private GameObject notes;
         [SerializeField]
         private float lineYPos;
-        [SerializeField]
-        private int totalNotes;
 
         private Camera camera;
         private float delta = -3;
