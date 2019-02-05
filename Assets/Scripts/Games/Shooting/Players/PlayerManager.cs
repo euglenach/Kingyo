@@ -4,8 +4,8 @@ using UnityEditor;
 using UnityEngine;
 
 namespace Games.Shooting.Players{
-	public static class PlayerManager{
-		public static bool IsMove { get; set; }
-		public static bool IsAttack { get; set; }
+	public class PlayerManager : MonoBehaviour{
+		public bool IsMove { get; set; } = true;
+		public bool IsAttack { get; set; } = true;
 	}
 }

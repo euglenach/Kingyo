@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace Games.Shooting.Players{
     public class PlayerAttack : MonoBehaviour{
 
         public GameObject kobanPrefab;
+        private PlayerManager pm;
+
+        private void Start(){
+            pm = GetComponent<PlayerManager>();
+        }
 
         private void Attack(){
 
@@ -17,7 +23,7 @@ namespace Games.Shooting.Players{
 
         void Update()
         {
-            if (!PlayerManager.IsAttack){
+            if (!pm.IsAttack){
                 return;
             }
             Attack();
