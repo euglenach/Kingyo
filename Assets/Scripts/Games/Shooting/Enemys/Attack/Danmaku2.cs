@@ -13,6 +13,7 @@ namespace Games.Shooting.Enemys.Attack{
 		private int count = 0;
 		private Vector2 vec;
 		private int rad = 0;
+		[SerializeField] private GameObject itamae;
 		
 		public override void StartAttack(){
 			count = 0;
@@ -23,11 +24,11 @@ namespace Games.Shooting.Enemys.Attack{
 
 		IEnumerator Attack(){
 			
-			while (count < 100){
-				rad += 8;
+			while (count < 50){
+				rad += 30;
 				vec.x = Mathf.Cos(Mathf.Deg2Rad * rad);
 				vec.y = Mathf.Sin(Mathf.Deg2Rad * rad);
-				GenerateBullet.Generate(SushiList.Instance.GetRandomType(),transform.position,vec,10f);
+				GenerateBullet.Generate(SushiList.Instance.GetRandomType(),itamae.transform.position,vec,5f);
 				count++;
 				yield return new WaitForSeconds(0.05f);
 			}

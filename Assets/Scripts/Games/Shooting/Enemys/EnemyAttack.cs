@@ -32,19 +32,17 @@ namespace Games.Shooting.Enemys{
             }
         }
         
-        void Start(){
-            
-
+        void Shot(){         
             foreach (var item in waves){
                 item.EndWave.Subscribe(_ => {
                     GoNext();
                 });
             }
             waves[0].StartAttack();
-//            waves[currentIndex]
-//                .ObserveEveryValueChanged(x => x.IsEnd)
-//                .Where(x => x)
-//                .Subscribe(_ => Debug.Log("fff"));
+        }
+
+        private void Start(){
+            Shot();
         }
     }
 }
