@@ -20,7 +20,11 @@ namespace Games.Shooting.Players{
         private void OnTriggerEnter2D(Collider2D other){
             if (other.gameObject.CompareTag("Sushi")){
                 var temp = other.gameObject.GetComponent<Sushi.Sushi>();
-                var price = temp.CanEat ? temp.Price : -temp.Price;
+                var price = temp.Price;
+                if (!temp.CanEat){
+                    price = -price;
+                    GameManager.Instance.NoMoneyCount++;
+                }
                 GameManager.Instance.SushiScores[temp.SushiType] += price;
                 audioSource.PlayOneShot(eat);
                 Destroy(other.gameObject);

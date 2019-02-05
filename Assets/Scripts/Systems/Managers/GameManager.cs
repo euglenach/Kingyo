@@ -9,7 +9,8 @@ namespace Systems.Managers{
 	[DefaultExecutionOrder(-10)]
 	public class GameManager : SingletonMonoBehaviour<GameManager>{
 		public GameState NowGame = GameState.Music;
-		public int CoinCount;
+		public int CoinCount = 0;
+		public int NoMoneyCount = 0;
 		public Dictionary<SushiType, int> SushiScores = new Dictionary<SushiType, int>();
 
 		void Start(){
