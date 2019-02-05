@@ -22,7 +22,7 @@ namespace Games.Shooting.Enemys.Attack{
 		}
 
 		IEnumerator Attack(){
-			while (count < 3){
+			while (count < 2){
 				foreach (var i in Enumerable.Range(0,5)){
 					var dis = Vector2.Distance(itamae.transform.position, player.transform.position);
 					vec = player.transform.position - itamae.transform.position;

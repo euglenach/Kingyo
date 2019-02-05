@@ -39,7 +39,7 @@ namespace Games.Shooting.Enemys.Attack{
 		}
 
 		IEnumerator Attack(){
-			while (count < 2){
+			//while (count < 2){
 				var ran = Random.Range(0, lanes.Count);
 				var pos = lanes[ran].transform.position;
 				
@@ -64,7 +64,7 @@ namespace Games.Shooting.Enemys.Attack{
 				count++;
 				
 				yield return new WaitForSeconds(0.5f);
-			}
+			//}
 			IsEnd = true;
 			end.OnNext(Unit.Default);
 		}
