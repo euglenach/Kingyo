@@ -9,31 +9,32 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1829459117776518}
+  m_RootGameObject: {fileID: 1596871326040552}
   m_IsPrefabParent: 1
---- !u!1 &1829459117776518
+--- !u!1 &1596871326040552
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4689793501620388}
-  - component: {fileID: 212671076220348686}
-  - component: {fileID: 114469299614635426}
+  - component: {fileID: 4409249922954524}
+  - component: {fileID: 212375377816906226}
+  - component: {fileID: 114386710325908466}
+  - component: {fileID: 50990176253666860}
   m_Layer: 0
-  m_Name: tuna
+  m_Name: ikura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4689793501620388
+--- !u!4 &4409249922954524
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1829459117776518}
+  m_GameObject: {fileID: 1596871326040552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,25 +42,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114469299614635426
+--- !u!50 &50990176253666860
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1596871326040552}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &114386710325908466
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1829459117776518}
+  m_GameObject: {fileID: 1596871326040552}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cafd17c2228890f40acf82abba3da4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sushiType: 0
-  price: 0
---- !u!212 &212671076220348686
+  SushiType: 1
+  Price: 0
+  CanEat: 0
+--- !u!212 &212375377816906226
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1829459117776518}
+  m_GameObject: {fileID: 1596871326040552}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -88,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1a6954ed565073f4bb31510300f0d0e0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 94352f158041d4c41a799afd35b3bc2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
