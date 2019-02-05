@@ -5,5 +5,7 @@
 		Salmon,
 		Kappa,
 		Tamago,
+		Shari,
+		Wasabi
 	}
 }
