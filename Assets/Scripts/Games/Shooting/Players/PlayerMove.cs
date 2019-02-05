@@ -5,8 +5,7 @@ using UnityEngine;
 namespace Games.Shooting.Players{
     public class PlayerMove : MonoBehaviour{
 
-        public Rigidbody rb;
-        GameObject Player;
+        Rigidbody2D rb;
 
         public float moveSpeed = 3.0f;
         public float moveX = 8f;
@@ -20,8 +19,7 @@ namespace Games.Shooting.Players{
 
         void Start()
         {
-            Player = GameObject.Find("Player");
-            rb = GetComponent<Rigidbody>();
+            rb = GetComponent<Rigidbody2D>();
         }
 
         private void Move(){

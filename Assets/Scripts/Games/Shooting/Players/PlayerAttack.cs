@@ -18,7 +18,7 @@ namespace Games.Shooting.Players{
 
         void Update()
         {
-            if (attackFlag == true){
+            if (attackFlag){
                 Attack();
             }
         }
