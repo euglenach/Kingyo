@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Systems.Managers{
+	[DefaultExecutionOrder(-1)]
 	public class FadeManager : SingletonMonoBehaviour<FadeManager>{
 		/// <summary>
 		/// デバッグモード .

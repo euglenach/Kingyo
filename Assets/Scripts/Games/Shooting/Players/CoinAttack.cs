@@ -19,12 +19,4 @@ public class CoinAttack : MonoBehaviour {
             Destroy(gameObject);
         }
     }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Sushi")
-        {
-            Destroy(gameObject);
-        }
-    }
 }

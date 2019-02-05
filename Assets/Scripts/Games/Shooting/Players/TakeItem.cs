@@ -13,18 +13,19 @@ namespace Games.Shooting.Players{
         private void Start(){
             pm = GetComponent<PlayerManager>();
         }
-        
-        private void OnCollisionEnter(Collision other){
+
+        private void OnTriggerEnter2D(Collider2D other){
             if (other.gameObject.CompareTag("Sushi")){
                 var temp = other.gameObject.GetComponent<Sushi.Sushi>();
                 var price = temp.CanEat ? temp.Price : -temp.Price;
                 GameManager.Instance.SushiScores[temp.SushiType] += price;
-
+                Destroy(other.gameObject);
                 if (temp.SushiType == SushiType.Wasabi){
                     pm.IsAttack = pm.IsMove = false;
                     Observable.Timer(TimeSpan.FromSeconds(1))
                               .Subscribe(_ => { pm.IsAttack = pm.IsMove = true; }).AddTo(gameObject);
                 }
+                
             }
         }
     }
