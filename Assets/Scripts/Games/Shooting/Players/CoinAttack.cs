@@ -9,6 +9,7 @@ public class CoinAttack : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        transform.Rotate(new Vector3(0,0,90));
     }
 	
 	// Update is called once per frame
