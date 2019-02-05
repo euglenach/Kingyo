@@ -37,7 +37,7 @@ namespace Games.Music.Systems.Managers {
                                 new Vector3(-2.883f + 1.916f * NotesDate.NotesStatuses[notesCount].Lane, top, 0),
                                 Quaternion.identity);
                     notesCount++;
-                    if (notesCount == totalNotes) finished = true;
+                    if (notesCount == NotesDate.NotesStatuses.Length) finished = true;
                 }
             }
 
@@ -45,7 +45,7 @@ namespace Games.Music.Systems.Managers {
 
         private void Update()
         {
-            for (int i = 0; i < totalNotes; i++){
+            for (int i = 0; i < NotesDate.NotesStatuses.Length; i++){
                 if (delta - 0.2 < NotesDate.NotesStatuses[i].Time && NotesDate.NotesStatuses[i].Time < delta + 0.2){
                     switch (NotesDate.NotesStatuses[i].Lane){
                         case 0:
