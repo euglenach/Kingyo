@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Notes : MonoBehaviour {
-    [SerializeField]
     private Camera camera;
-
-    public static float notesSpeed;
+    public static float notesSpeed = 0.1f;
     private Vector3 screenEnd;
 
     private void Start()
     {
+        camera = Camera.main;
         screenEnd = camera.ViewportToWorldPoint(new Vector3(0, 0, 0));
     }
 
