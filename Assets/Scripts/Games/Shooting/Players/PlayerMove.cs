@@ -11,9 +11,21 @@ namespace Games.Shooting.Players{
         private Animator anim;
         private PlayerManager pm;
         private float speed => GetSpeed();
+        private bool canMove;
+        private float x, y;
 
         float GetSpeed(){
-            return Input.GetKey(KeyCode.LeftShift) ? 5 : 10;
+            var child = transform.GetChild(0).gameObject;
+            float s = 0;
+            if(Input.GetKey(KeyCode.LeftShift)){
+                s = 2;
+                child.SetActive(true);
+            }else
+            {
+                s = 3.5f;
+                child.SetActive(false);
+            }
+            return s;
         }
 
 
@@ -29,9 +41,10 @@ namespace Games.Shooting.Players{
                 return;
             }
 
-            var x = Input.GetAxisRaw("Horizontal");
-            var y = Input.GetAxisRaw("Vertical");
-            rb.velocity = new Vector2(x,y);
+            x = Input.GetAxisRaw("Horizontal");
+            y = Input.GetAxisRaw("Vertical");
+            rb.velocity = Vector2.zero;
+            canMove = (x == 0 && y == 0) ? false : true;
 
             if (Mathf.Abs(x) > 0){
                 anim.SetBool("Forward",true);
@@ -57,6 +70,10 @@ namespace Games.Shooting.Players{
             Move();
         }
 
-
+        private void FixedUpdate(){
+            if (canMove){
+                rb.velocity = new Vector2(x,y) * speed;
+            }
+        }
     }
 }

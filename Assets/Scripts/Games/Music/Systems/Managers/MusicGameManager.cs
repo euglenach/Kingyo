@@ -12,6 +12,7 @@ namespace Games.Music.Systems.Managers{
 		public bool IsEnd { get; private set; }
 		[SerializeField] private GameObject back;
 		[SerializeField] private NotesManager nm;
+		[SerializeField] private GameObject musicObj;
 		private ShootingGameManager sgm;
 		
 		List<GameObject> backs = new List<GameObject>();
@@ -39,8 +40,10 @@ namespace Games.Music.Systems.Managers{
 			backs[0].GetComponent<Rigidbody2D>().velocity = Vector2.up * speed;
 			backs[1].GetComponent<Rigidbody2D>().velocity = Vector2.left * speed;
 			backs[2].GetComponent<Rigidbody2D>().velocity = Vector2.right * speed;
+			musicObj.transform.GetChild(0).gameObject.SetActive(false);
 			yield return new WaitForSeconds(1.5f);
 			Destroy(back);
+			musicObj.SetActive(false);
 			StartCoroutine(sgm.Transition());
 		}
 	}
