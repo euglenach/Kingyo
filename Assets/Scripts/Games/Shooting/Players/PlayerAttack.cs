@@ -8,9 +8,12 @@ namespace Games.Shooting.Players{
 
         public GameObject kobanPrefab;
         private PlayerManager pm;
+        private AudioSource audioSource;
+        [SerializeField] private AudioClip attack;
 
         private void Start(){
             pm = GetComponent<PlayerManager>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         private void Attack(){
@@ -18,6 +21,7 @@ namespace Games.Shooting.Players{
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Instantiate(kobanPrefab, transform.position, Quaternion.identity);
+                audioSource.PlayOneShot(attack);
             }
         }
 

@@ -38,13 +38,14 @@ namespace Games.Shooting.Players{
 
         private void Move(){
             if (!pm.IsMove){
+                StopAnim();
+                rb.velocity = Vector2.zero;
                 return;
             }
 
             x = Input.GetAxisRaw("Horizontal");
             y = Input.GetAxisRaw("Vertical");
-            rb.velocity = Vector2.zero;
-            canMove = (x == 0 && y == 0) ? false : true;
+            rb.velocity = new Vector2(x, y) * speed;
 
             if (Mathf.Abs(x) > 0){
                 anim.SetBool("Forward",true);
@@ -57,23 +58,27 @@ namespace Games.Shooting.Players{
                 anim.SetBool("Wait",false);
             }
             else{
-                anim.SetBool("Forward",false);
-                anim.SetBool("Down",false);
-                anim.SetBool("Up",false);
-                anim.SetBool("Wait",true);
+                StopAnim();
             }
 
         }
 
+        void StopAnim(){
+            anim.SetBool("Forward",false);
+            anim.SetBool("Down",false);
+            anim.SetBool("Up",false);
+            anim.SetBool("Wait",true);
+        }
+        
         private void Update()
         {
             Move();
         }
 
-        private void FixedUpdate(){
-            if (canMove){
-                rb.velocity = new Vector2(x,y) * speed;
-            }
-        }
+//        private void FixedUpdate(){
+//            if (canMove){
+//                rb.velocity = new Vector2(x,y) * speed;
+//            }
+//        }
     }
 }

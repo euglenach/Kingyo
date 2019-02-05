@@ -24,13 +24,13 @@ namespace Games.Shooting.Enemys.Attack{
 
 		IEnumerator Attack(){
 			
-			while (count < 50){
-				rad += 30;
+			while (count < 70){
+				rad += 20;
 				vec.x = Mathf.Cos(Mathf.Deg2Rad * rad);
 				vec.y = Mathf.Sin(Mathf.Deg2Rad * rad);
 				GenerateBullet.Generate(SushiList.Instance.GetRandomType(),itamae.transform.position,vec,5f);
 				count++;
-				yield return new WaitForSeconds(0.05f);
+				yield return new WaitForSeconds(0.04f);
 			}
 
 			IsEnd = true;

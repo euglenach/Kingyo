@@ -9,9 +9,12 @@ using System;
 namespace Games.Shooting.Players{
     public class TakeItem : MonoBehaviour{
         private PlayerManager pm;
+        private AudioSource audioSource;
+        [SerializeField]private AudioClip eat; 
 
         private void Start(){
             pm = GetComponent<PlayerManager>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         private void OnTriggerEnter2D(Collider2D other){
@@ -19,6 +22,7 @@ namespace Games.Shooting.Players{
                 var temp = other.gameObject.GetComponent<Sushi.Sushi>();
                 var price = temp.CanEat ? temp.Price : -temp.Price;
                 GameManager.Instance.SushiScores[temp.SushiType] += price;
+                audioSource.PlayOneShot(eat);
                 Destroy(other.gameObject);
                 if (temp.SushiType == SushiType.Wasabi){
                     pm.IsAttack = pm.IsMove = false;

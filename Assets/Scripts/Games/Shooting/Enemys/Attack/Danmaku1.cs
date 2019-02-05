@@ -23,7 +23,7 @@ namespace Games.Shooting.Enemys.Attack{
 
 		IEnumerator Attack(){
 			while (count < 3){
-				foreach (var i in Enumerable.Range(0,360).Where(n => n % 30 == 0)){
+				foreach (var i in Enumerable.Range(0,360).Where(n => n % 15 == 0)){
 					vec.x = Mathf.Cos(Mathf.Deg2Rad * i);
 					vec.y = Mathf.Sin(Mathf.Deg2Rad * i);
 					GenerateBullet.Generate(SushiList.Instance.GetRandomType(),itamae.transform.position,vec,5f);

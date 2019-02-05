@@ -58,12 +58,12 @@ namespace Games.Shooting.Enemys.Attack{
 				itamaeRb.velocity = Vector2.zero;
 			
 				foreach (var i in Enumerable.Range(0,3)){
-					GenerateBullet.Generate(SushiList.Instance.GetRandomType(),itamae.transform.position,vec,5f);
+					GenerateBullet.Generate(SushiList.Instance.GetRandomType(),itamae.transform.position,vec,6f);
 					yield return new WaitForSeconds(0.3f);
 				}
 				count++;
 				
-				yield return new WaitForSeconds(0.5f);
+				//yield return new WaitForSeconds(0.5f);
 			//}
 			IsEnd = true;
 			end.OnNext(Unit.Default);

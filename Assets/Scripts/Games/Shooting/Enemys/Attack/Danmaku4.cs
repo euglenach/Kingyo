@@ -30,7 +30,7 @@ namespace Games.Shooting.Enemys.Attack{
 					vec.x = Mathf.Cos(rad);
 					vec.y = Mathf.Sin(rad);
 					
-					GenerateBullet.Generate(SushiList.Instance.GetRandomType(),itamae.transform.position,vec,5f);
+					GenerateBullet.Generate(SushiList.Instance.GetRandomType(),itamae.transform.position,vec,7f);
 				}
 				count++;
 				

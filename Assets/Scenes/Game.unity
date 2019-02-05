@@ -363,7 +363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &241950160
 Transform:
   m_ObjectHideFlags: 0
@@ -477,7 +477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &279467794
 Transform:
   m_ObjectHideFlags: 0
@@ -2269,7 +2269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1241615740
 Transform:
   m_ObjectHideFlags: 0
@@ -3306,6 +3306,7 @@ GameObject:
   - component: {fileID: 1697322218}
   - component: {fileID: 1697322217}
   - component: {fileID: 1697322219}
+  - component: {fileID: 1697322220}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3338,6 +3339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aadfb5df68d01e24694bf9ceb3abfdcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eat: {fileID: 8300000, guid: 87be4f1887dde5c41b30e0877597fcee, type: 3}
 --- !u!114 &1697322213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3362,6 +3364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kobanPrefab: {fileID: 1637590288762496, guid: 6cd9557a4a8a5d7488fe0ffebd7aea46,
     type: 2}
+  attack: {fileID: 8300000, guid: 11db6968582b0fb469e202616c9457b4, type: 3}
 --- !u!95 &1697322215
 Animator:
   serializedVersion: 3
@@ -3469,6 +3472,86 @@ CircleCollider2D:
   m_Offset: {x: 0.0025521517, y: 0}
   serializedVersion: 2
   m_Radius: 0.18944442
+--- !u!82 &1697322220
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1697322210}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1715255691
 GameObject:
   m_ObjectHideFlags: 0

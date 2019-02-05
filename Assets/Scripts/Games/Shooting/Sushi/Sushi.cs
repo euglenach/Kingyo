@@ -7,6 +7,8 @@ namespace Games.Shooting.Sushi{
         public SushiType SushiType;
         public int Price;
         public bool CanEat;
+        private AudioSource audioSource;
+        [SerializeField] private AudioClip attack;
         private Rigidbody2D rb;
         private Camera mainCamera;
         Rect rect = new Rect(-0.1f, -0.1f, 1.2f, 1.2f);
@@ -24,6 +26,7 @@ namespace Games.Shooting.Sushi{
 
         private void Start(){
             mainCamera = Camera.main;
+            audioSource = GetComponent<AudioSource>();
         }
 
         public void Move(Vector2 position,Vector2 direction, float speed){
@@ -34,6 +37,7 @@ namespace Games.Shooting.Sushi{
         private void OnTriggerEnter2D(Collider2D other){
             if (other.gameObject.CompareTag("Coin")){
                 CanEat = true;
+                audioSource.PlayOneShot(attack);
                 var child = transform.GetChild(0).gameObject;
                 child.SetActive(true);
                 Destroy(other.gameObject);
