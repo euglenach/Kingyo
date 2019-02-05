@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SushiType: 5
-  Price: 0
+  Price: 20
   CanEat: 0
 --- !u!212 &212596676263583310
 SpriteRenderer:
