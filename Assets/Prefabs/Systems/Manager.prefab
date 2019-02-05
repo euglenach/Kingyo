@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4648845978441654}
   - component: {fileID: 114274929216114542}
   - component: {fileID: 114625585832513452}
+  - component: {fileID: 114915142167637926}
   - component: {fileID: 82374980135558536}
   m_Layer: 0
   m_Name: Manager
@@ -149,3 +150,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NowGame: 0
   CoinCount: 0
+--- !u!114 &114915142167637926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385047926635736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d332b1a050f1cc40a4bf58871362d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

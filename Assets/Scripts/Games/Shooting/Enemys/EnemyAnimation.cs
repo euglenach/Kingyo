@@ -14,7 +14,6 @@ public class EnemyAnimation : MonoBehaviour{
     private void FixedUpdate(){
         var ve = rb.velocity;
         anim.SetBool("Wait",false);
-        Debug.Log($"x:{ve.x} y:{ve.y}");
         if (ve.x < 0){
             anim.SetBool("Forward", true);
             Debug.Log("x < 0");
