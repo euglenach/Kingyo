@@ -14,6 +14,7 @@ namespace Games.Shooting.Systems.Managers{
         
         public IEnumerator Transition(){
             GameManager.Instance.NowGame = GameState.Shooting;
+            BGMManager.Instance.StartMusic();
             shootingObjects.SetActive(true);
             rb = lane.GetComponent<Rigidbody2D>();
 
@@ -26,6 +27,10 @@ namespace Games.Shooting.Systems.Managers{
             yield return new WaitForSeconds(time);
             rb.velocity = Vector2.zero;
             lane.transform.localPosition = Vector2.zero;
+        }
+
+        public void EndGame(){
+            FadeManager.Instance.LoadScene(Scene.Result,4f);
         }
     }
 }

@@ -27,13 +27,21 @@ namespace Systems.Managers{
 			switch (SceneManager.NowScene){
 				case Scene.Title:
 					PlayMusic(0);
+					AudioSource.loop = true;
 					break;
 				case Scene.Game:
-					if(GameManager.Instance.NowGame == GameState.Music)PlayMusic(1);
-					if(GameManager.Instance.NowGame == GameState.Shooting)PlayMusic(2);
+					if (GameManager.Instance.NowGame == GameState.Music){
+						PlayMusic(1);
+						AudioSource.loop = false;
+					}
+					if (GameManager.Instance.NowGame == GameState.Shooting){
+						PlayMusic(2);
+						AudioSource.loop = true;
+					}
 					break;
 				case Scene.Result:
 					PlayMusic(3);
+					AudioSource.loop = true;
 					break;
 				
 			}

@@ -27,7 +27,6 @@ namespace Games.Music.Systems.Managers{
 			}
 
 			sgm = GetComponent<ShootingGameManager>();
-
 			BGMManager.Instance
 			          .ObserveEveryValueChanged(n => !n.isPlay)
 			          .First(n => n && nm.finished)
@@ -40,8 +39,8 @@ namespace Games.Music.Systems.Managers{
 			backs[0].GetComponent<Rigidbody2D>().velocity = Vector2.up * speed;
 			backs[1].GetComponent<Rigidbody2D>().velocity = Vector2.left * speed;
 			backs[2].GetComponent<Rigidbody2D>().velocity = Vector2.right * speed;
-			Debug.Log("owari!");
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(1.5f);
+			Destroy(back);
 			StartCoroutine(sgm.Transition());
 		}
 	}
