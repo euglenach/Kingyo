@@ -16,23 +16,23 @@ public class EnemyAnimation : MonoBehaviour{
         anim.SetBool("Wait",false);
         if (ve.x < 0){
             anim.SetBool("Forward", true);
-            Debug.Log("x < 0");
+            //.Log("x < 0");
         }else if (ve.x > 0){
             anim.SetBool("Forward",true);
-            Debug.Log("x > 0");
+            //Debug.Log("x > 0");
         }else if (ve.y < 0){
             anim.SetBool("Down",true);
-            Debug.Log("y < 0");
+            //Debug.Log("y < 0");
         }else if (ve.y > 0){
             anim.SetBool("Up",true);
-            Debug.Log("y > 0");
+            //Debug.Log("y > 0");
         }
         else{
             anim.SetBool("Forward", false);
             anim.SetBool("Down",false);
             anim.SetBool("Up",false);
             anim.SetBool("Wait",true);
-            Debug.Log("ve == 0");
+            //Debug.Log("ve == 0");
         }
     }
 }

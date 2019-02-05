@@ -18,7 +18,7 @@ namespace Games.Music.Systems.Managers{
 		private const float speed = 10f;
 
 		private void Update(){
-			Debug.Log(BGMManager.Instance.isPlay +""+ nm.finished);
+			//Debug.Log(BGMManager.Instance.isPlay +""+ nm.finished);
 		}
 
 		private void Start(){

@@ -17,5 +17,10 @@ namespace Systems.Managers{
 				SushiScores[(SushiType) i] = 0;
 			}
 		}
+
+		void Update(){
+			//Debug.Log(CoinCount);
+			//Debug.Log(SushiScores.Values.Sum());
+		}
 	}
 }
