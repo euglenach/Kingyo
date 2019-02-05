@@ -53,18 +53,17 @@ namespace Games.Music.Systems.Managers {
                 if (delta - 0.2 < NotesDate.NotesStatuses[i].Time && NotesDate.NotesStatuses[i].Time < delta + 0.2){
                     switch (NotesDate.NotesStatuses[i].Lane){
                         case 0:
-                            if (Input.GetKeyDown(KeyCode.D)) Debug.Log("hit");
+                            if (Input.GetKeyDown(KeyCode.D)) GameManager.Instance.CoinCount++;
                             break;
                         case 1:
-                            if (Input.GetKeyDown(KeyCode.F)) Debug.Log("hit");
+                            if (Input.GetKeyDown(KeyCode.F)) GameManager.Instance.CoinCount++;
                             break;
                         case 2:
-                            if (Input.GetKeyDown(KeyCode.J)) Debug.Log("hit");
+                            if (Input.GetKeyDown(KeyCode.J)) GameManager.Instance.CoinCount++;
                             break;
                         case 3:
-                            if (Input.GetKeyDown(KeyCode.K)) Debug.Log("hit");
+                            if (Input.GetKeyDown(KeyCode.K)) GameManager.Instance.CoinCount++;
                             break;
-                            //コインゲット
                     }
                 }
             }
