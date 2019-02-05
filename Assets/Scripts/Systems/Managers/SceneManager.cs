@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Systems.Managers{
+	[DefaultExecutionOrder(-10)]
 	public static class SceneManager{
 		public static Scene NowScene => GetActiveScene();
 

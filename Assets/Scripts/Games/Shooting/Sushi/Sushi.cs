@@ -30,5 +30,14 @@ namespace Games.Shooting.Sushi{
             rb = GetComponent<Rigidbody2D>();
             rb.velocity = direction * speed;
         }
+
+        private void OnTriggerEnter2D(Collider2D other){
+            if (other.gameObject.CompareTag("Coin")){
+                CanEat = true;
+                var child = transform.GetChild(0).gameObject;
+                child.SetActive(true);
+                Destroy(other.gameObject);
+            }
+        }
     }
 }

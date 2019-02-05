@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SEManager : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+namespace Systems.Managers{
+	[DefaultExecutionOrder(-1)]
+	public class SEManager : MonoBehaviour{
+		private AudioSource[] audioSources;
 		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+		private void Awake() {
+			audioSources = GetComponentsInChildren<AudioSource>();
+		}
 		
+		public void SoundCall(int num) {
+			audioSources[num].PlayOneShot(audioSources[num].clip);
+		}
 	}
 }

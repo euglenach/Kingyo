@@ -9,20 +9,13 @@ public class CoinAttack : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        transform.Rotate(new Vector3(0,0,90));
     }
 	
 	// Update is called once per frame
 	void Update () {
         rb.velocity = new Vector3(shootX, 0, 0);
         if (transform.position.x > 10f)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Sushi")
         {
             Destroy(gameObject);
         }

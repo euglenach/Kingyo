@@ -6,6 +6,7 @@ using System.Linq;
 using Games.Shooting.Sushi;
 
 namespace Systems.Managers{
+	[DefaultExecutionOrder(-10)]
 	public class GameManager : SingletonMonoBehaviour<GameManager>{
 		public GameState NowGame = GameState.Music;
 		public int CoinCount;
