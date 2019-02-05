@@ -1,20 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Games.Shooting.Players;
+using UnityEditor;
 using UnityEngine;
 
 namespace Systems.Managers{
+	[DefaultExecutionOrder(-1)]
 	public class BGMManager : SingletonMonoBehaviour<BGMManager>{
 		[SerializeField] private AudioClip[] audioClips;
-		private AudioSource audioSource;
+		public AudioSource AudioSource { get; private set; }
+		private float timer = -3;
+		public bool isPlay => timer < nowMusicLength;
+		private float nowMusicLength = 0;
 		
 		private void Start(){
-			audioSource = GetComponent<AudioSource>();
+			AudioSource = GetComponent<AudioSource>();
+		}
+
+		private void Update(){
+			timer += Time.deltaTime;
 		}
 
 		public void StartMusic(){
-			audioSource.Stop();
-			Debug.Log(SceneManager.NowScene);
+			AudioSource.Stop();
+			timer = 0;
 			switch (SceneManager.NowScene){
 				case Scene.Title:
 					PlayMusic(0);
@@ -32,9 +41,14 @@ namespace Systems.Managers{
 
 		private void PlayMusic(int clipIndex){
 			var temp = audioClips[clipIndex];
-			if (temp == null) return;
-			audioSource.clip = temp;
-			audioSource.Play();
+			if (temp == null){
+				nowMusicLength = 0;
+				return;
+			}
+
+			nowMusicLength = temp.length;
+			AudioSource.clip = temp;
+			AudioSource.Play();
 		}
 	}
 }

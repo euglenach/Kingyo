@@ -18,7 +18,7 @@ namespace Games.Music.Systems.Managers {
         private float top;
         private float down;
         private int notesCount;
-        private bool finished = false;
+        public bool finished { get; private set; }
 
         private void Start(){
             camera = Camera.main;
