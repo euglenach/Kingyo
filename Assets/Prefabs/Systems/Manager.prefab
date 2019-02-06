@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114274929216114542}
   - component: {fileID: 114625585832513452}
   - component: {fileID: 114915142167637926}
+  - component: {fileID: 114713573663631792}
   - component: {fileID: 82374980135558536}
   m_Layer: 0
   m_Name: Manager
@@ -138,6 +139,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 8300000, guid: 26c36f9bb88f65f468d882b8a87bfc9c, type: 3}
   - {fileID: 8300000, guid: fc5fb93690e3e9f45849ba80009fa783, type: 3}
+  - {fileID: 8300000, guid: 465a8d32571fb2a4a9a76d5e0856ce6f, type: 3}
 --- !u!114 &114625585832513452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,6 +153,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NowGame: 0
   CoinCount: 0
+  UseCoin: 0
+  NoMoneyCount: 0
+--- !u!114 &114713573663631792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385047926635736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468ffe06d5a109c408a0a490ae2250a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &114915142167637926
 MonoBehaviour:
   m_ObjectHideFlags: 1
