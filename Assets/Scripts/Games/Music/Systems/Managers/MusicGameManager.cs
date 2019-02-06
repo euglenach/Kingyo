@@ -30,8 +30,8 @@ namespace Games.Music.Systems.Managers{
 			sgm = GetComponent<ShootingGameManager>();
 			BGMManager.Instance
 			          .ObserveEveryValueChanged(n => !n.isPlay)
-			          .First(n => n && nm.finished)
-			          .Subscribe(_ => StartCoroutine(Transition()));
+			          .FirstOrDefault(n => n && nm.finished)
+			          .Subscribe(_ => StartCoroutine(Transition())).AddTo(gameObject);
 			
 		}
 
