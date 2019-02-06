@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Runtime.InteropServices;
+using Systems.Managers;
 using UnityEngine;
 using Games.Shooting.Bullets;
 using UniRx;
@@ -38,7 +39,7 @@ namespace Games.Shooting.Enemys{
             
             this
                 .ObserveEveryValueChanged(x => endWave)
-                .First(n => n)
+                .First(n => n || GameManager.Instance.CoinCount - GameManager.Instance.UseCoin < 1)
                 .Subscribe(_ => sgm.EndGame());
         }
     }
