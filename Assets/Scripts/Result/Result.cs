@@ -7,6 +7,7 @@ using System.Linq;
 using Systems.Managers;
 using Games.Shooting.Sushi;
 using UnityEditor;
+using Systems.Managers;
 
 namespace Result{
 	public class Result : MonoBehaviour{
@@ -19,6 +20,7 @@ namespace Result{
 		[SerializeField] private Text[] others;
 		private AudioSource audioSource;
 		List<Text> netaText = new List<Text>();
+		private bool isEnd;
 		
 		
 		void Start(){
@@ -27,13 +29,18 @@ namespace Result{
 				var temp = prices.transform.GetChild(i).gameObject;
 				netaText.Add(temp.GetComponent<Text>());
 			}
-
+			BGMManager.Instance.StartMusic();
 			StartCoroutine(Display());
 		}
 
 		// Update is called once per frame
 		void Update(){
-
+			if (isEnd){
+				if (Input.anyKeyDown){
+					isEnd = false;
+					FadeManager.Instance.LoadScene(Scene.Game,2,true);
+				}
+			}
 		}
 
 		IEnumerator Display(){
@@ -58,7 +65,7 @@ namespace Result{
 			others[0].text = "無銭飲食";
 			audioSource.PlayOneShot(jarin);
 			yield return new WaitForSeconds(1);
-			others[1].text = GameManager.Instance.NoMoneyCount.ToString() + "円";
+			others[1].text = GameManager.Instance.NoMoneyCount.ToString() + "回";
 			audioSource.PlayOneShot(jarin);
 			yield return new WaitForSeconds(1);
 
@@ -69,7 +76,9 @@ namespace Result{
 			others[3].text = scores.Values.Sum().ToString() + "円";
 			yield return new WaitForSeconds(1);
 			audioSource.PlayOneShot(people);
-			
+			yield return new WaitForSeconds(2);
+			isEnd = true;
+			yield break;
 		}
 	}
 }

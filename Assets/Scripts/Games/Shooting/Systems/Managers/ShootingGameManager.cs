@@ -33,7 +33,8 @@ namespace Games.Shooting.Systems.Managers{
 
         public void EndGame(){
             Observable.Timer(TimeSpan.FromSeconds(3))
-                      .Subscribe(_ => FadeManager.Instance.LoadScene(Scene.Result,4f));
+                      .Subscribe(_ => FadeManager.Instance.LoadScene(Scene.Result, 4f))
+                      .AddTo(gameObject);
 
         }
     }

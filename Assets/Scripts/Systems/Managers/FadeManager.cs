@@ -69,9 +69,11 @@ namespace Systems.Managers{
 	/// </summary>
 	/// <param name='next'>シーン名</param>
 	/// <param name='interval'>暗転にかかる時間(秒)</param>
-	public void LoadScene (Scene next, float interval)
-	{
-		StartCoroutine (TransScene (next, interval));
+	public void LoadScene (Scene next, float interval,bool isExit = false){
+		if (isExit)
+			StartCoroutine(TransScene(next, interval, true));
+		else
+			StartCoroutine (TransScene (next, interval));
 	}
 
 	/// <summary>
@@ -79,7 +81,7 @@ namespace Systems.Managers{
 	/// </summary>
 	/// <param name='next'>シーン名</param>
 	/// <param name='interval'>暗転にかかる時間(秒)</param>
-	private IEnumerator TransScene (Scene next, float interval)
+	private IEnumerator TransScene (Scene next, float interval,bool isExit = false)
 	{
 		//だんだん暗く .
 		this.isFading = true;
@@ -89,9 +91,14 @@ namespace Systems.Managers{
 			time += Time.deltaTime;
 			yield return 0;
 		}
-		
-		//シーン切替 .
-		SceneManager.LoadScene (next);
+
+		if (isExit){
+			Application.Quit();
+			yield break;
+		}
+		else{
+			SceneManager.LoadScene (next);
+		}
 
 		//だんだん明るく .
 		time = 0;

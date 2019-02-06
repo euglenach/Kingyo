@@ -28,19 +28,21 @@ namespace Games.Shooting.Enemys{
             foreach (var item in waves){
                 item.EndWave.Subscribe(_ => {
                     GoNext();
-                });
+                }).AddTo(gameObject);
             }
             waves[0].StartAttack();
         }
 
         private void Start(){
             Observable.Timer(System.TimeSpan.FromSeconds(2))
-                      .Subscribe(_ => Shot());
-            
+                      .Subscribe(_ => Shot())
+                      .AddTo(gameObject);
+
             this
                 .ObserveEveryValueChanged(x => endWave)
                 .First(n => n || GameManager.Instance.CoinCount - GameManager.Instance.UseCoin < 1)
-                .Subscribe(_ => sgm.EndGame());
+                .Subscribe(_ => sgm.EndGame())
+                .AddTo(gameObject);
         }
     }
 }
