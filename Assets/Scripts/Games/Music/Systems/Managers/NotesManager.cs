@@ -69,7 +69,7 @@ namespace Games.Music.Systems.Managers {
 
             for (int i = 0; i < NotesDate.NotesStatuses.Length; i++)
             {
-                if (delta - 0.2 < NotesDate.NotesStatuses[i].Time && NotesDate.NotesStatuses[i].Time < delta + 0.2)
+                if (delta - 0.1 < NotesDate.NotesStatuses[i].Time && NotesDate.NotesStatuses[i].Time < delta + 0.1)
                 {
                     switch (NotesDate.NotesStatuses[i].Lane)
                     {
