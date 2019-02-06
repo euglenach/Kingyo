@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 260436703}
   - component: {fileID: 260436705}
   - component: {fileID: 260436704}
+  - component: {fileID: 260436706}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -451,6 +452,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notes: {fileID: 1819115265085570, guid: b0b4aac11f1096045901c00d015ff390, type: 2}
   lineYPos: -4.575
+  getCoin: {fileID: 8300000, guid: 3981d3846ac307d49babdb89958d1b1f, type: 3}
+  push: {fileID: 8300000, guid: d4234718b72bde84391b3e4fa8fc2d8c, type: 3}
 --- !u!114 &260436705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +465,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c1630d8bd1cd14280e88b587195407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &260436706
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 260436702}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &279467793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,7 +1187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 805, y: 252}
+  m_AnchoredPosition: {x: 780, y: 254}
   m_SizeDelta: {x: 304.3, y: 141.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588671512
@@ -1150,7 +1233,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: '000
+
+'
 --- !u!222 &588671514
 CanvasRenderer:
   m_ObjectHideFlags: 0

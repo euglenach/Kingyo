@@ -11,7 +11,12 @@ namespace Games.Music.Systems.Managers {
         private GameObject notes;
         [SerializeField]
         private float lineYPos;
+        [SerializeField]
+        private AudioClip getCoin;
+        [SerializeField]
+        private AudioClip push;
 
+        private AudioSource audioSource;
         private Camera camera;
         private float delta = -3;
         private float distance;
@@ -19,12 +24,15 @@ namespace Games.Music.Systems.Managers {
         private float down;
         private int notesCount;
         public bool finished { get; private set; }
+        private bool isPushKeyD, isPushKeyF, isPushKeyJ, isPushKeyK;
+        private bool isGood;
 
         private void Start(){
             camera = Camera.main;
             top = camera.ViewportToWorldPoint(Vector3.one).y;
             down = camera.ViewportToWorldPoint(Vector3.zero).y;
             distance = top - lineYPos;
+            audioSource = GetComponent<AudioSource>();
             this
                 .ObserveEveryValueChanged(n => n.delta)
                 .First(n => n > 0)
@@ -45,28 +53,48 @@ namespace Games.Music.Systems.Managers {
                 }
             }
 
-        }
-
-        private void Update()
-        {
             for (int i = 0; i < NotesDate.NotesStatuses.Length; i++){
                 if (delta - 0.2 < NotesDate.NotesStatuses[i].Time && NotesDate.NotesStatuses[i].Time < delta + 0.2){
                     switch (NotesDate.NotesStatuses[i].Lane){
                         case 0:
-                            if (Input.GetKeyDown(KeyCode.D)) GameManager.Instance.CoinCount++;
+                            if (isPushKeyD) isGood = true;
+                            else isGood = false;
                             break;
                         case 1:
-                            if (Input.GetKeyDown(KeyCode.F)) GameManager.Instance.CoinCount++;
+                            if (isPushKeyF) isGood = true;
+                            else isGood = false;
                             break;
                         case 2:
-                            if (Input.GetKeyDown(KeyCode.J)) GameManager.Instance.CoinCount++;
+                            if (isPushKeyJ) isGood = true;
+                            else isGood = false;
                             break;
                         case 3:
-                            if (Input.GetKeyDown(KeyCode.K)) GameManager.Instance.CoinCount++;
+                            if (isPushKeyK) isGood = true;
+                            else isGood = false;
                             break;
                     }
                 }
             }
+            if (isGood){
+                GameManager.Instance.CoinCount++;
+                audioSource.PlayOneShot(getCoin);
+            }
+            else{
+                if (isPushKeyD || isPushKeyF || isPushKeyJ || isPushKeyK)
+                    audioSource.PlayOneShot(push);
+            }
+
+        }
+
+        private void Update(){
+            if (Input.GetKeyDown(KeyCode.D)) isPushKeyD = true;
+            else isPushKeyD = false;
+            if (Input.GetKeyDown(KeyCode.F)) isPushKeyF = true;
+            else isPushKeyF = false;
+            if (Input.GetKeyDown(KeyCode.J)) isPushKeyJ = true;
+            else isPushKeyJ = false;
+            if (Input.GetKeyDown(KeyCode.K)) isPushKeyK = true;
+            else isPushKeyK = false;
         }
     }
 
