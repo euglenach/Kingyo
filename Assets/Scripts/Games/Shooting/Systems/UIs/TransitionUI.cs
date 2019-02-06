@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Games.Systems.UIs{
+namespace Games.Shooting.Systems.UIs{
     public class TransitionUI : MonoBehaviour{
         public void Transition(){
             

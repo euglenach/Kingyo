@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Systems.Managers;
 using UnityEditor;
 using UnityEngine;
 
@@ -18,9 +19,10 @@ namespace Games.Shooting.Players{
 
         private void Attack(){
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.CoinCount - GameManager.Instance.UseCoin > 0)
             {
                 Instantiate(kobanPrefab, transform.position, Quaternion.identity);
+                GameManager.Instance.UseCoin++;
                 audioSource.PlayOneShot(attack);
             }
         }

@@ -10,6 +10,7 @@ namespace Systems.Managers{
 	public class GameManager : SingletonMonoBehaviour<GameManager>{
 		public GameState NowGame = GameState.Music;
 		public int CoinCount = 0;
+		public int UseCoin = 0;
 		public int NoMoneyCount = 0;
 		public Dictionary<SushiType, int> SushiScores = new Dictionary<SushiType, int>();
 
