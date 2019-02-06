@@ -23,7 +23,7 @@ namespace Games.Shooting.Enemys.Attack{
 
 		IEnumerator Attack(){
 			while (count < 2){
-				foreach (var i in Enumerable.Range(0,5)){
+				//foreach (var i in Enumerable.Range(0,5)){
 					var dis = Vector2.Distance(itamae.transform.position, player.transform.position);
 					vec = player.transform.position - itamae.transform.position;
 					var rad = Mathf.Atan2(vec.y, vec.x);
@@ -31,7 +31,7 @@ namespace Games.Shooting.Enemys.Attack{
 					vec.y = Mathf.Sin(rad);
 					
 					GenerateBullet.Generate(SushiList.Instance.GetRandomType(),itamae.transform.position,vec,7f);
-				}
+				//}
 				count++;
 				
 				yield return new WaitForSeconds(1f);
