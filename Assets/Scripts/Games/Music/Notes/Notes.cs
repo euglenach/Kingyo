@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Notes : MonoBehaviour {
     private Camera camera;
-    public static float notesSpeed = 0.1f;
+    public static float notesSpeed = 0.2f;
     private Vector3 screenEnd;
     [SerializeField]
     private GameObject hitCoin;
