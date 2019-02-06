@@ -53,9 +53,26 @@ namespace Games.Music.Systems.Managers {
                 }
             }
 
-            for (int i = 0; i < NotesDate.NotesStatuses.Length; i++){
-                if (delta - 0.2 < NotesDate.NotesStatuses[i].Time && NotesDate.NotesStatuses[i].Time < delta + 0.2){
-                    switch (NotesDate.NotesStatuses[i].Lane){
+            
+
+        }
+
+        private void Update(){
+            if (Input.GetKeyDown(KeyCode.D)) isPushKeyD = true;
+            else isPushKeyD = false;
+            if (Input.GetKeyDown(KeyCode.F)) isPushKeyF = true;
+            else isPushKeyF = false;
+            if (Input.GetKeyDown(KeyCode.J)) isPushKeyJ = true;
+            else isPushKeyJ = false;
+            if (Input.GetKeyDown(KeyCode.K)) isPushKeyK = true;
+            else isPushKeyK = false;
+
+            for (int i = 0; i < NotesDate.NotesStatuses.Length; i++)
+            {
+                if (delta - 0.2 < NotesDate.NotesStatuses[i].Time && NotesDate.NotesStatuses[i].Time < delta + 0.2)
+                {
+                    switch (NotesDate.NotesStatuses[i].Lane)
+                    {
                         case 0:
                             if (isPushKeyD) isGood = true;
                             else isGood = false;
@@ -75,28 +92,18 @@ namespace Games.Music.Systems.Managers {
                     }
                 }
             }
-            if (isGood){
+            if (isGood)
+            {
                 GameManager.Instance.CoinCount++;
                 audioSource.PlayOneShot(getCoin);
                 GetComponent<BoxCollider2D>().enabled = true;
             }
-            else{
+            else
+            {
                 GetComponent<BoxCollider2D>().enabled = false;
                 if (isPushKeyD || isPushKeyF || isPushKeyJ || isPushKeyK)
                     audioSource.PlayOneShot(push);
             }
-
-        }
-
-        private void Update(){
-            if (Input.GetKeyDown(KeyCode.D)) isPushKeyD = true;
-            else isPushKeyD = false;
-            if (Input.GetKeyDown(KeyCode.F)) isPushKeyF = true;
-            else isPushKeyF = false;
-            if (Input.GetKeyDown(KeyCode.J)) isPushKeyJ = true;
-            else isPushKeyJ = false;
-            if (Input.GetKeyDown(KeyCode.K)) isPushKeyK = true;
-            else isPushKeyK = false;
         }
     }
 
