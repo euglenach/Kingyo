@@ -78,8 +78,10 @@ namespace Games.Music.Systems.Managers {
             if (isGood){
                 GameManager.Instance.CoinCount++;
                 audioSource.PlayOneShot(getCoin);
+                GetComponent<BoxCollider2D>().enabled = true;
             }
             else{
+                GetComponent<BoxCollider2D>().enabled = false;
                 if (isPushKeyD || isPushKeyF || isPushKeyJ || isPushKeyK)
                     audioSource.PlayOneShot(push);
             }
