@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Systems.Managers;
 using UnityEditor;
+using UniRx;
+using System;
 using UnityEngine;
 
 namespace Games.Shooting.Systems.Managers{
@@ -30,7 +32,9 @@ namespace Games.Shooting.Systems.Managers{
         }
 
         public void EndGame(){
-            FadeManager.Instance.LoadScene(Scene.Result,4f);
+            Observable.Timer(TimeSpan.FromSeconds(3))
+                      .Subscribe(_ => FadeManager.Instance.LoadScene(Scene.Result,4f));
+
         }
     }
 }
