@@ -97,6 +97,7 @@ namespace Games.Music.Systems.Managers {
                 GameManager.Instance.CoinCount++;
                 audioSource.PlayOneShot(getCoin);
                 GetComponent<BoxCollider2D>().enabled = true;
+                isGood = false;
             }
             else
             {
